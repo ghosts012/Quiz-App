@@ -137,3 +137,16 @@ dist
 # Vite logs files
 vite.config.js.timestamp-*
 vite.config.ts.timestamp-*
+# — Frontend build (create-react-app, Vite, etc.)
+build/               # create-react-app build output
+.vite/               # Vite cache/output
+
+# — IDE/editor settings
+.vscode/             # VSCode settings
+.idea/               # JetBrains IDE settings (WebStorm, etc.)
+
+# — MongoDB local dumps
+dump/                # if you ever run mongodump locally
+
+# — Static assets (if you ever generate them)
+public/static/
