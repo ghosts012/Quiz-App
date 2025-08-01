@@ -10,14 +10,15 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { useForm } from "react-hook-form";
 import { zodResolver} from '@hookform/resolvers/zod';
-import { registerSchema } from "../validations/register-validation";
+import { registerSchema } from "../validations/register-validation.ts";
 import { doRegister } from "../api/user-api";
 import { useNavigate } from "react-router-dom";
-import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert"
+import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
 import { useState } from "react";
 
 const Register = () => {
   const [status, setStatus] = useState(false);
+  const [message, setMessage] = useState('');
   const navigate = useNavigate();
   const {
     register,
@@ -33,9 +34,9 @@ const Register = () => {
   });
         const alertJSX = <div>
           <Alert variant="destructive">
-  <AlertTitle>Regsiter Message</AlertTitle>
+  <AlertTitle>Register Message</AlertTitle>
   <AlertDescription>
-    Register Fails
+    {message}
   </AlertDescription>
 </Alert>
         </div>
@@ -50,11 +51,13 @@ const Register = () => {
       }
       else{
         setStatus(true);
+        setMessage('Unable to register..');
         console.log("Unable to register..");
       }
     }
     catch(err){
       setStatus(true);
+      setMessage(err.response.data.message);
       console.log("Register Fail ", err);
     }
   };
