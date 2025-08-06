@@ -4,7 +4,7 @@ This repository contains both the **frontend** and **backend** code for a collab
 
 ## 🔧 My Role
 
-I developed the **entire backend** for this project.  
+I am developing the **entire backend** for this project.  
 The frontend is being built by teammates and is located in the `/frontend` directory.
 
 ---
@@ -14,5 +14,4 @@ The frontend is being built by teammates and is located in the `/frontend` direc
 - Node.js
 - Express.js
 - MongoDB + Mongoose
-- JWT (for authentication)
 - Bcrypt (for password hashing)
